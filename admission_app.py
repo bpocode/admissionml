@@ -3,6 +3,11 @@ import pickle
 import numpy as np
 import pandas as pd
 
+password_guess = st.text_input("What is the Password?")
+if password_guess != st.secrets["Erik"]:
+    st.stop
+
+
 # Suppress warnings
 import warnings
 warnings.filterwarnings("ignore")
@@ -39,7 +44,4 @@ print(y_test_pred)
 print(y_test_pis)
 
 
-password_guess = st.text_input("What is the Password?")
-if password_guess != st.secrets["Erik"]:
-    st.stop
 
