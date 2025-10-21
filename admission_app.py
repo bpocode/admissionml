@@ -9,6 +9,9 @@ warnings.filterwarnings("ignore")
 
 with open('reg_admission.pickle', 'rb') as f:
     clf = pickle.load(f)
+    
+st.title('Admissions Predictor') 
+st.image('admission.jpg', width = 800)
 
 st.sidebar.header('**Admission Chances input**')
 gre = st.sidebar.slider('GRE Score', min_value=0,max_value=300,step=1)
@@ -34,4 +37,9 @@ if st.sidebar.button("Predict"):
 
 print(y_test_pred)
 print(y_test_pis)
+
+
+password_guess = st.text_input("What is the Password?")
+if password_guess != st.secrets["Erik"]:
+    st.stop
 
